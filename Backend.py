@@ -3,21 +3,22 @@ from CBR import CaseBaseReasoning
 import pandas as pd
 
 
-def startCBR(weight_range = [1,1,1,2,2,1,1,1,1,1,1,1], thresholds = 1):
+def startCBR(weight_range = [1,1,1,2,2,1,1,1,1,1,1,1], thresholds = 0.9):
     caseBaseReasoning = CaseBaseReasoning(weight_range, thresholds)
     weights = caseBaseReasoning.getWeights()
     thresholds = caseBaseReasoning.getThresholds()
     config = {"Gender": weights[0],
-                "Age": weights[0],
-                "Occupation": weights[0],
-                "Sleep Duration": weights[0],
-                "Quality of Sleep": weights[0],
-                "Physical Activity Level": weights[0],
-                "Stress Level": weights[0],
-                "BMI Category": weights[0],
-                "Sistole": weights[0],
-                "Diastole": weights[0],
-                "Daily Steps": weights[0],
+                "Age": weights[1],
+                "Occupation": weights[2],
+                "Sleep Duration": weights[3],
+                "Quality of Sleep": weights[4],
+                "Physical Activity Level": weights[5],
+                "Stress Level": weights[6],
+                "BMI Category": weights[7],
+                "Sistole": weights[8],
+                "Diastole": weights[9],
+                "Heart Rate": weights[10] 
+                "Daily Steps": weights[11],
                 "Threshold" : thresholds
              }
 
@@ -174,6 +175,7 @@ with tab4:
     BMICategoryW = st.number_input(label='BMI Category', value=config['BMI Category'], min_value=1.0, max_value=10.0, step=1.0)
     sistoleW = st.number_input(label='Sistole', value=config['Sistole'], min_value=1.0, max_value=10.0, step=1.0)
     diastoleW = st.number_input(label='Diastole', value=config['Diastole'], min_value=1.0, max_value=10.0, step=1.0)
+    heartRateW = st.number_input(label='Heart Rate', value=config['Heart Rate'], min_value=1.0, max_value=10.0, step=1.0)
     dailyStepsW = st.number_input(label='Daily Steps', value=config['Daily Steps'], min_value=1.0, max_value=10.0, step=1.0)
     st.header("Threshold Setting")
     thresholdInp = st.number_input(label='Threshold', value=config['Threshold'], min_value=0.1, max_value=1.0, step=0.05)
@@ -191,6 +193,7 @@ with tab4:
                 float(BMICategoryW),
                 float(sistoleW),
                 float(diastoleW),
+                float(heartRateW),
                 float(dailyStepsW)
             ]
             caseBaseReasoning, config = startCBR(newWeights, float(thresholdInp))
