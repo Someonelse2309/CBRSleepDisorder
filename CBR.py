@@ -180,7 +180,7 @@ class CaseBaseReasoning():
         for row in self.df_encoded.iterrows():
             # print(row[1])
             self.newCase(row[1], "Train")
-        self.saveToJson()
+        # self.saveToJson()
 
     def newCase(self, row, State = "Train"):
         if State == "Final":
