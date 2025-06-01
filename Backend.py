@@ -195,18 +195,6 @@ with tab4:
             ]
             caseBaseReasoning, config = startCBR(newWeights, float(thresholdInp))
             st.write("Config Berhasil Diupdate")
-            genderW.value = config['Gender']
-            ageW.value = config['Age']
-            occupationW.value = config['Occupation']
-            sleepDurationW.value = config['Sleep Duration']
-            qualityOfSleepW.value = config['Quality of Sleep']
-            physicalActivityLevelW.value = config['Physical Activity Level']
-            stressLevelW.value = config['Stress Level']
-            BMICategoryW.value = config['BMI Category']
-            sistoleW.value = config['Sistole']
-            diastoleW.value = config['Diastole']
-            dailyStepsW.value = config['Daily Steps']
-            thresholdInp.value = config['Threshold']
         except ValueError as e:
             st.error(str(e))
             st.error("Pastikan semua input adalah angka (integer) yang valid.")
