@@ -3,7 +3,7 @@ from CBR import CaseBaseReasoning
 import pandas as pd
 
 
-def startCBR(weight_range = [1.0] * 12, thresholds = 1):
+def startCBR(weight_range = [1,1,1,2,2,1,1,1,1,1,1,1], thresholds = 1):
     caseBaseReasoning = CaseBaseReasoning(weight_range, thresholds)
     weights = caseBaseReasoning.getWeights()
     thresholds = caseBaseReasoning.getThresholds()
