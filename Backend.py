@@ -17,7 +17,7 @@ def startCBR(weight_range = [1,1,1,2,2,1,1,1,1,1,1,1], thresholds = 0.9):
                 "BMI Category": weights[7],
                 "Sistole": weights[8],
                 "Diastole": weights[9],
-                "Heart Rate": weights[10] 
+                "Heart Rate": weights[10], 
                 "Daily Steps": weights[11],
                 "Threshold" : thresholds
              }
