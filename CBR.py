@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 class CaseBaseReasoning():
-    def __init__(self, weight_range = [1,1,1,2,2,1,1,1,1,1,1,1], thresholds = 1):
+    def __init__(self, weight_range = [1,1,1,2,2,1,1,1,1,1,1,1], thresholds = 0.9):
         self.occupation_mapping = {
             "Accountant": {
                 "Accountant": 1.0,
